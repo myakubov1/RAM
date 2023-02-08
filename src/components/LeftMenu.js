@@ -8,7 +8,9 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import List from '@mui/material/List';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
+import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
+import MovieIcon from '@mui/icons-material/Movie';
+import ExploreIcon from '@mui/icons-material/Explore';
 
 export default function LeftMenu() {
   const [isOpen, setState] = useState(false);
@@ -41,13 +43,28 @@ export default function LeftMenu() {
           onKeyDown={toggleDrawer(false)}
         >
           <List>
-            <ListItem disablePadding>
+            <ListItem>
               <ListItemButton>
                 <ListItemIcon>
-                  <InboxIcon />
-                  Characters
+                  <AccessibilityNewIcon />
                 </ListItemIcon>
-                <ListItemText />
+                <ListItemText primary="Characters" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem>
+              <ListItemButton>
+                <ListItemIcon>
+                  <ExploreIcon />
+                </ListItemIcon>
+                <ListItemText primary="Locations" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem>
+              <ListItemButton>
+                <ListItemIcon>
+                  <MovieIcon />
+                </ListItemIcon>
+                <ListItemText primary="Episodes" />
               </ListItemButton>
             </ListItem>
           </List>

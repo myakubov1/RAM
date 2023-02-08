@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
+import { useState } from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -29,7 +31,6 @@ function CharacterCard({ char }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
         <Button size="small">Learn More</Button>
       </CardActions>
     </Card>

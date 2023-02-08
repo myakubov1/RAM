@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable no-underscore-dangle */
 import axios from 'axios';
@@ -19,6 +20,11 @@ class RamService {
     return this._transformCharacter(res.results[0]);
   };
 
+  getEpisode = async (id) => {
+    const res = await this.getResource(`${this._apiBase}episode/${id}`);
+    return this._transformEpisode(res.results[0]);
+  };
+
   _transformCharacter = (char) => ({
     id: char.id,
     name: char.name,
@@ -27,6 +33,14 @@ class RamService {
     type: char.type,
     gender: char.gender,
     image: char.image,
+    episode: char.episode,
+  });
+
+  _transformEpisode = (episode) => ({
+    id: episode.id,
+    name: episode.name,
+    air_date: episode.air_date,
+    episode: episode.species,
   });
 }
 
