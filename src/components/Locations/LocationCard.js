@@ -7,33 +7,29 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
 
-function CharacterCard({ char }) {
+function LocationCard({ location }) {
   return (
     <Card>
       <CardMedia
-        component="img"
-        src={char.image}
-        title={char.name}
+        title={location.name}
       />
       <CardContent>
         <Typography gutterBottom variant="h6" component="div">
-          {char.name}
+          {location.type}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {char.status}
+          {location.dimension}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {char.species}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {char.gender}
+          {location.residents}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button size="small">123</Button>
       </CardActions>
     </Card>
   );
 }
-export default CharacterCard;
+export default LocationCard;
